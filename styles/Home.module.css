@@ -10,6 +10,13 @@
 .mainTitle {
   font-size: 2em;
   color: #222;
+  margin-bottom: 0;
+}
+
+.subTitle {
+  font-size: 1em;
+  color: #222;
+  margin-top: 10px;
 }
 
 .form {

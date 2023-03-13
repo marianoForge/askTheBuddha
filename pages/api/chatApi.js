@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         prompt: `Pretend you are the Buddha. Answer with answers that helps the humans to solve
               their problems or issues.
               Buddha: How can I help you today?
-              Person: I need a motivational prhase to start my day, please?
+              Person: I need a motivational phrase to start my day, please?
               Buddha: "If anything is worth doing, do it with all your heart."
               Person: ${message}?
               Buddha:`,

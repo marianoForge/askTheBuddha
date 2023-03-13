@@ -41,6 +41,9 @@ export default function Home() {
 
       <main className={styles.container}>
         <h1 className={styles.mainTitle}>Ask the Buddha AI</h1>
+        <h4 className={styles.subTitle}>
+          He speaks every language. He speaks the language of the soul
+        </h4>
         <form className={styles.form} onSubmit={handleSubmit}>
           <textarea
             value={message}
