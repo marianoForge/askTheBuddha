@@ -14,10 +14,19 @@
 }
 
 .subTitle {
-  font-size: 1em;
-  color: #222;
+  font-size: 1.2em;
+  color: #333;
   margin-top: 10px;
 }
+
+.intro {
+  font-size: 1em;
+  color: #333;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
 
 .form {
   width: 100%;

@@ -6,6 +6,7 @@ export default function Home() {
   const [message, setMessage] = useState('');
   const [response, setResponse] = useState('');
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setMessage(e.target.value);
@@ -13,7 +14,7 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
       fetch('api/chatApi', {
         method: 'POST',
@@ -25,6 +26,7 @@ export default function Home() {
         .then((res) => res.json())
         .then((data) => {
           setResponse(data.message);
+          setLoading(false);
         });
     } catch (error) {
       setError(!error);
@@ -44,11 +46,16 @@ export default function Home() {
         <h4 className={styles.subTitle}>
           He speaks every language. He speaks the language of the soul
         </h4>
+
+        <p className={styles.intro}>
+          Do you need motivation? - Do you need advice? - Do you have
+          existentional doubts?
+        </p>
         <form className={styles.form} onSubmit={handleSubmit}>
           <textarea
             value={message}
             onChange={handleChange}
-            placeholder="Ask the Buddha anything"
+            placeholder="Ask the Buddha"
             className={styles.textarea}
           />
 
@@ -56,11 +63,18 @@ export default function Home() {
             Send
           </button>
         </form>
-        {response && (
+        {loading ? (
           <div className={styles.response}>
-            <b>Buddha:</b> {response}
+            <b>Buddha:</b> I am thinking...
           </div>
+        ) : (
+          response && (
+            <div className={styles.response}>
+              <b>Buddha:</b> {response}
+            </div>
+          )
         )}
+
         {error && (
           <div className={styles.response}>
             <b>Disciple:</b> Sorry the Budha is restint right now
