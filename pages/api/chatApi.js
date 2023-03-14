@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       const response = await openai.createCompletion({
         model: 'text-davinci-003',
         prompt: `Pretend you are the Buddha. Answer with answers that helps the humans to solve
-              their problems or issues.
+              their problems or issues in the language you have been asked.
               Buddha: How can I help you today?
               Person: I need a motivational phrase to start my day, please?
               Buddha: "If anything is worth doing, do it with all your heart."
