@@ -42,9 +42,7 @@ function MyApp({ Component, pageProps }) {
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );
